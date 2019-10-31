@@ -1,0 +1,31 @@
+{
+  "name": "hackaday-projects-api",
+  "version": "1.0.0",
+  "description": "This page show projects from Hackaday.io, and their respective metadata, owner information, and uses pagination.",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run watch:code & npm run watch:css",
+    "watch:code": "nodemon nodemon server.js",
+    "watch:css": "node-sass -w src/scss -o src/public/css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DISKONEKTeD/hackaday-projects-API.git"
+  },
+  "author": "",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/DISKONEKTeD/hackaday-projects-API/issues"
+  },
+  "homepage": "https://github.com/DISKONEKTeD/hackaday-projects-API#readme",
+  "dependencies": {
+    "ejs": "^2.7.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nightwatch": "^1.2.4",
+    "node-sass": "^4.13.0",
+    "nodemon": "^1.19.4"
+  }
+}

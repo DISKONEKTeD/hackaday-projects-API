@@ -1,0 +1,8 @@
+@import 'palette';
+@import 'fonts';
+
+body {
+    font: 100% $font-stack;
+    color: $color1;
+    background-color: $color5;
+}
