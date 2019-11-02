@@ -1,0 +1,20 @@
+#projects {
+    img {
+        background-color: $color3;
+        object-fit: cover;
+        object-position: 100% 0;
+        width: 280px;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .project {
+        overflow: hidden;
+        margin: 0.8em;
+    }
+
+    margin: 2rem auto 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+}

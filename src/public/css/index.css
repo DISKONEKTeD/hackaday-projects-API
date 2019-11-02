@@ -1,8 +1,84 @@
 /* Coolors Exported Palette - coolors.co/e63946-f1faee-a8dadc-457b9d-1d3557 */
 /* HSL */
 /* RGB */
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Fjalla+One&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
 body {
-  font: 100% "Josefin Sans", serif;
-  color: #e63946;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+#projects {
+  margin: 2rem auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem; }
+  #projects img {
+    background-color: #a8dadc;
+    object-fit: cover;
+    object-position: 100% 0;
+    width: 280px;
+    height: 250px;
+    border-radius: 5px; }
+  #projects .project {
+    overflow: hidden;
+    margin: 0.8em; }
+
+@media screen and (min-width: 768px) {
+  #projects {
+    grid-template-columns: repeat(2, 1fr); } }
+
+@media screen and (min-width: 1200px) {
+  #projects {
+    grid-template-columns: repeat(3, 1fr); } }
+
+body {
+  font: 100% "Montserrat", sans-serif;
+  color: black;
   background-color: #1d3557; }
+
+h1 {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 900; }
+
+h2 {
+  font-family: "Fjalla One", sans-serif;
+  font-weight: 900;
+  font-size: 25px; }

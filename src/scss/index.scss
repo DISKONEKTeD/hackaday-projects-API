@@ -1,8 +1,23 @@
-@import 'palette';
-@import 'fonts';
+@import 'base/palette';
+@import 'base/reset';
+@import 'base/fonts';
+@import 'layout/projects';
+@import 'layout/config';
+@import 'layout/responsive';
 
 body {
     font: 100% $font-stack;
-    color: $color1;
+    color: black;
     background-color: $color5;
+}
+
+h1 {
+    font-family: $header-stack;
+    font-weight: 900;
+}
+
+h2 {
+    font-family: $header-stack;
+    font-weight: 900;
+    font-size: 25px;
 }
