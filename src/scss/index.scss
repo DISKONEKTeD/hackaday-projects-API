@@ -17,7 +17,21 @@ h1 {
 }
 
 h2 {
-    font-family: $header-stack;
     font-weight: 900;
     font-size: 25px;
+}
+
+h3 {
+    font-weight: 900;
+    font-size: 19px;
+}
+
+.jumbotron p {
+    margin-bottom: 0 !important;
+    font-size: 100% !important;
+    font-weight: 0 !important;
+}
+
+.tippy-content {
+    padding: 0.7em;
 }

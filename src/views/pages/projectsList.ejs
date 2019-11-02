@@ -12,21 +12,26 @@
 
 <main>
     <div class="jumbotron" id="projects">
+            
         <% projects.forEach((project) => { %>
             <div class="card project">
-                <div class="owner_bar">  
-                    <img src="<%= project.owner.image_url%>"  />
+                <div 
+
+                    class="owner_bar" 
+                    data-id="<%= project.owner_id %>"
+                    data-screen_name="<%= project.owner.screen_name %>"
+                    data-followers="<%= project.owner.followers %>"
+                    data-projects="<%= project.owner.projects %>"
+                    data-about_me="<%= project.owner.about_me %>"
+                    data-image_url="<%= project.owner.image_url %>"
+                    >  
+                    <img src="<%= project.owner.image_url %>"  />
                     <p><%= project.owner.screen_name %></p>
                 </div>
-                <a href="/projects/<%= project.id %>" >
                     <img class="card-img-top" src="<%= project.image_url %>" alt="Card image cap">
-                </a>
                     <div class="card-body">
-                        <a href="/projects/<%= project.id %>" >
                             <h2 ><%= project.name.toUpperCase() %></h2>
                             <h2></h2>
-                            <!-- project.owner_id -->
-                        </a>
                         <!-- <p class="card-text"><%= project.description %></p> -->
                     </div>
             </div>
@@ -38,6 +43,9 @@
 <footer>
     <% include ../partials/footer %>
 </footer>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://unpkg.com/popper.js@1"></script>
+<script src="https://unpkg.com/tippy.js@5"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

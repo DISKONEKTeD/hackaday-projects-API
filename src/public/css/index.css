@@ -75,6 +75,11 @@ table {
       height: 30px;
       border-radius: 15px;
       margin-right: 0.5em; }
+  #projects .owner_bar_img {
+    border-radius: 5px;
+    margin-right: 0.6em; }
+  #projects .owner_bar_footer {
+    margin-top: 0.5em; }
 
 @media screen and (min-width: 768px) {
   #projects {
@@ -94,6 +99,17 @@ h1 {
   font-weight: 900; }
 
 h2 {
-  font-family: "Fjalla One", sans-serif;
   font-weight: 900;
   font-size: 25px; }
+
+h3 {
+  font-weight: 900;
+  font-size: 19px; }
+
+.jumbotron p {
+  margin-bottom: 0 !important;
+  font-size: 100% !important;
+  font-weight: 0 !important; }
+
+.tippy-content {
+  padding: 0.7em; }
