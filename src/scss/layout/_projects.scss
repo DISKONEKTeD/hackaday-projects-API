@@ -1,20 +1,43 @@
 #projects {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+
     img {
-        background-color: $color3;
-        object-fit: cover;
-        object-position: 100% 0;
-        width: 280px;
-        height: 250px;
-        border-radius: 5px;
+        &.card-img-top {
+            background-color: $color3;
+            object-fit: cover;
+            object-position: 100% 0;
+            width: 280px;
+            height: 250px;
+            border-radius: 5px;
+        }
     }
 
     .project {
+        width: 18rem;
         overflow: hidden;
         margin: 0.8em;
     }
 
-    margin: 2rem auto 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    .owner_bar {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 0.5em;
+        align-items: center;
+
+        p {
+            margin-bottom: 0;
+        }
+
+        img {
+            background-color: $color3;
+            object-fit: cover;
+            object-position: 100% 0;
+            width: 30px;
+            height: 30px;
+            border-radius: 15px;
+            margin-right: 0.5em;
+        }
+    }
 }

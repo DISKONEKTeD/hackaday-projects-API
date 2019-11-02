@@ -1,73 +1,39 @@
 const axios = require('axios');
 
-const getProjectsList = (req, res, next) => {
-	const { message_id, user_id } = req.body;
-	const { token } = req;
-	// EXTRACT ERRORS IF PRESENT
-	const errors = validationResult(req)
-	// IF ERRORS EXIST AKA THE USER HAS SENT INCORRECT INPUT
-	// THIS WILL CATCH THEM AND SEND THE ERRORS MESSAGE AS RESPONSE
-	if (!errors.isEmpty()) {
-	  return errorController.errorHandler(res, errors.array({ onlyFirstError: true })[0].msg, 'unprocessable');
-	}
+const API_KEY = '?api_key=' + process.env.API_KEY;
+const API_URI  = 'https://api.hackaday.io/v1/';
+// 'https://api.hackaday.io/v1/projects?api_key=' + API_KEY + '&per_page=10&page=1';
+const PER_PAGE = 6
 
-	return db.tx(async (t) => {
-		/****************************************************************/
-		/************* PERMISSIONS: VERIFY USER HAS ACCESS **************/
-		/****************************************************************/
-		const verified = userController.verifyByIdT(t, user_id, token);
-		if(!verified) throw new Error('User Does Not Have Permission');
-
-		const deleted = await message.deleteMessageT(t, message_id, user_id);
-		return { deleted };
-	})
-	.then((result) => {
-		const { deleted, blocked }  = result
-		return res.status(200)
-				.json({
-					success: true,
-					message: `removed ${deleted.rowCount} request`
-				});
-	})
-	.catch((error) => {
-		console.log(error.message)
-		return errorController.errorHandler(res, 'Error: Unable To Delete Message', 'unprocessable');	
-	});
-}
+const PROJECTS_REQ = API_URI + 'projects' + API_KEY + '&per_page=6&page=1';
+const USER_REQ = API_URI + 'users/';
 
 const getProjectDetail = (req, res, next) => {
-	const { message_id, user_id } = req.body;
-	const { token } = req;
-	// EXTRACT ERRORS IF PRESENT
-	const errors = validationResult(req)
-	// IF ERRORS EXIST AKA THE USER HAS SENT INCORRECT INPUT
-	// THIS WILL CATCH THEM AND SEND THE ERRORS MESSAGE AS RESPONSE
-	if (!errors.isEmpty()) {
-	  return errorController.errorHandler(res, errors.array({ onlyFirstError: true })[0].msg, 'unprocessable');
-	}
+	//
+}
 
-	return db.tx(async (t) => {
-		/****************************************************************/
-		/************* PERMISSIONS: VERIFY USER HAS ACCESS **************/
-		/****************************************************************/
-		const verified = userController.verifyByIdT(t, user_id, token);
-		if(!verified) throw new Error('User Does Not Have Permission');
+const getProjectsList = async (req, res, next) => {
+	let response = await axios.get(PROJECTS_REQ);
+	let projectList = response.data
+    
+    let owners = await Promise.all(projectList.projects.map(async (project) => {
+        // console.log(USER_REQ + project.owner_id + API_KEY)
+        let res = await axios.get(USER_REQ + project.owner_id + API_KEY)
+        // console.log(res.data)
+        return res.data;
+    }));
 
-		const deleted = await message.deleteMessageT(t, message_id, user_id);
-		return { deleted };
-	})
-	.then((result) => {
-		const { deleted, blocked }  = result
-		return res.status(200)
-				.json({
-					success: true,
-					message: `removed ${deleted.rowCount} request`
-				});
-	})
-	.catch((error) => {
-		console.log(error.message)
-		return errorController.errorHandler(res, 'Error: Unable To Delete Message', 'unprocessable');	
-	});
+    // append owner
+    let projects = projectList.projects.map((project, index) => {
+        project.owner = owners[index] 
+        return project
+    })
+
+
+    return res.render('pages/projectsList', {
+        projects,
+        owners,
+    });
 }
 
 module.exports = {
