@@ -113,3 +113,27 @@ h3 {
 
 .tippy-content {
   padding: 0.7em; }
+
+.loader {
+  border: 16px solid #f1faee;
+  border-radius: 50%;
+  border-top: 16px solid #a8dadc;
+  width: 400px;
+  height: 400px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+  align-self: center; }
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg); } }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }

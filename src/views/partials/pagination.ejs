@@ -1,6 +1,10 @@
 <nav aria-label="...">
         <ul class="pager">
-          <li class="previous" style="visibility: hidden;"><a href="#" onclick="prev();return false;"><span aria-hidden="true">&larr;</span> Prev</a></li>
-          <li class="next"><a href="#" onclick="next();return false;">Next <span aria-hidden="true">&rarr;</span></a></li>
+          <% if (page > 1) { %>
+            <li class="previous" id="prev" style="visibility: visible;"><a href="javascript: void(0)" onclick="prev();return false;"><span aria-hidden="true">&larr;</span> Prev</a></li>
+          <% } else { %>
+            <li class="previous" id="prev" style="visibility: hidden;"><a href="javascript: void(0)" onclick="prev();return false;"><span aria-hidden="true">&larr;</span> Prev</a></li>
+          <% } %>
+          <li class="next" id="next"><a href="javascript: void(0)" onclick="next();return false;">Next <span aria-hidden="true">&rarr;</span></a></li>
         </ul>
 </nav>

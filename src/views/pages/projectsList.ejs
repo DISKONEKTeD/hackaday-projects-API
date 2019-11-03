@@ -12,7 +12,10 @@
 
 <main>
     <div class="jumbotron" id="projects">
-            
+        <div id="containLoader" style="display: none">
+            <div class="loader"></div>
+        </div>
+
         <% projects.forEach((project) => { %>
             <div class="card project">
                 <div 
@@ -31,7 +34,7 @@
                     <img class="card-img-top" src="<%= project.image_url %>" alt="Card image cap">
                     <div class="card-body">
                             <h2 ><%= project.name.toUpperCase() %></h2>
-                            <h2></h2>
+                            
                         <!-- <p class="card-text"><%= project.description %></p> -->
                     </div>
             </div>

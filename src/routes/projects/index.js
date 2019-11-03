@@ -12,5 +12,7 @@ const USER_REQ = API_URI + 'users/';
 
 
 router.get('/projects', projectsController.getProjectsList);
+router.get('/projectsClient', projectsController.getProjectsListClient);
+// router.get('/projects/:id', projectsController.getProjectDetail);
 
 module.exports = router;

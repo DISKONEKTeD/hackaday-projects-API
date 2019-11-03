@@ -3,6 +3,10 @@
     grid-template-columns: 1fr;
     grid-gap: 2rem;
 
+    // display: flex;
+    // justify-content: center;
+    // align-content: center;
+
     img {
         &.card-img-top {
             background-color: $color3;
@@ -49,4 +53,5 @@
     .owner_bar_footer {
         margin-top: 0.5em;
     }
+    
 }
