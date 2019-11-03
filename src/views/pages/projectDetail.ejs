@@ -12,8 +12,15 @@
 
 <main>
     <div class="jumbotron">
-        <h1>Hackaday Projects</h1>
-        <p>Place holder text</p>
+        <img src="<%= data.image_url %>" width=150 />
+        <h1><%= data.name %></h1>
+        <h2><%= data.summary %></h2>
+        <span><%= data.comments %> comments</span>
+        <span><%= data.followers %> followers</span>
+        <span><%= data.views %> views</span>
+
+        <p><%= data.description %></p>
+        <div><%= data.tags %></div>
     </div>
 </main>
 

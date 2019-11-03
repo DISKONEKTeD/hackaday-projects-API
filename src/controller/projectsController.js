@@ -9,8 +9,18 @@ const PAGE = 1;
 const PROJECTS_REQ = API_URI + 'projects' + API_KEY + '&per_page=6&page=1';
 const USER_REQ = API_URI + 'users/';
 
-const getProjectDetail = (req, res, next) => {
+const getProjectDetail = async (req, res, next) => {
     let { id } = req.params;
+
+    const REQ = API_URI + 'projects/' + id + API_KEY;
+    let response = await axios.get(REQ);
+    let { data } = response;
+
+    // data.tags
+
+    return res.render('pages/projectDetail', {
+        data
+    });
 }
 
 const getProjectsList = async (req, res, next) => {

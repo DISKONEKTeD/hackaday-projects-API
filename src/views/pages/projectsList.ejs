@@ -19,7 +19,6 @@
         <% projects.forEach((project) => { %>
             <div class="card project">
                 <div 
-
                     class="owner_bar" 
                     data-id="<%= project.owner_id %>"
                     data-screen_name="<%= project.owner.screen_name %>"
@@ -31,11 +30,13 @@
                     <img src="<%= project.owner.image_url %>"  />
                     <p><%= project.owner.screen_name %></p>
                 </div>
+                <a href="/projects/<%= project.id %>">
                     <img class="card-img-top" src="<%= project.image_url %>" alt="Card image cap">
+                </a>
                     <div class="card-body">
+                        <a href="/projects/<%= project.id %>" >
                             <h2 ><%= project.name.toUpperCase() %></h2>
-                            
-                        <!-- <p class="card-text"><%= project.description %></p> -->
+                        </a>
                     </div>
             </div>
         <% }); %>
