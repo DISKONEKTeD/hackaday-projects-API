@@ -1,7 +1,7 @@
 {
   "name": "hackaday-projects-api",
   "version": "1.0.0",
-  "description": "This page show projects from Hackaday.io, and their respective metadata, owner information, and uses pagination.",
+  "description": "This page showcases projects from Hackaday.io, and their respective metadata, owner information, and uses pagination.",
   "main": "server.js",
   "scripts": {
     "start": "npm run watch:code & npm run watch:css",

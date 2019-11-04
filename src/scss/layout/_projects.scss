@@ -1,23 +1,26 @@
 #projects {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 2rem;
+    grid-gap: 2rem 2rem;
 
     img {
         &.card-img-top {
-            background-color: $color3;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            object-position: 100% 0;
-            width: 280px;
-            height: 250px;
+            background-color: $color3;
             border-radius: 5px;
         }
     }
 
     .project {
-        width: 18rem;
         overflow: hidden;
         margin: 0.8em;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0fr 1fr 0fr;
+        grid-auto-rows: 200px;
+        grid-gap: 5px;
     }
 
     .owner_bar {

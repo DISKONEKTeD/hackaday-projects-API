@@ -21,6 +21,7 @@ footer {
 h1 {
     font-family: $header-stack;
     font-weight: 900;
+    font-size: 35px;
 }
 
 h2 {
@@ -52,6 +53,16 @@ h3 {
     -webkit-animation: spin 2s linear infinite; /* Safari */
     animation: spin 2s linear infinite;
     align-self: center;
+}
+
+.navbar-default .navbar-brand {
+    color: black;
+}
+
+.navbar-default .navbar-nav { 
+    li >  a {
+        color: black;
+    }
 }
 
 /* Safari */
