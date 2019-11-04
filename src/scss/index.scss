@@ -44,17 +44,6 @@ h3 {
     padding: 0.7em;
 }
 
-.loader {
-    border: 16px solid $color2;
-    border-radius: 50%;
-    border-top: 16px solid $color3;
-    width: 400px;
-    height: 400px;
-    -webkit-animation: spin 2s linear infinite; /* Safari */
-    animation: spin 2s linear infinite;
-    align-self: center;
-}
-
 .navbar-default .navbar-brand {
     color: black;
 }

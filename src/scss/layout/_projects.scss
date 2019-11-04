@@ -54,3 +54,30 @@
     }
     
 }
+
+.jumbotron {
+    display: flex; 
+    justify-content: center;
+    
+    #containLoader {
+        width: 100vw; 
+        height: 100vw; /* 100/56.25 = 1.778 */
+        max-height: 100vh;
+        max-width: 100vh; /* 16/9 = 1.778 */
+        align-self: center;
+    }
+    
+    .loader {
+        margin: 0 auto;
+        width: 86vw; 
+        height: 86vw; /* 100/56.25 = 1.778 */
+        max-height: 86vh;
+        max-width: 86vh; /* 16/9 = 1.778 */
+        border: 16px solid $color2;
+        border-radius: 50%;
+        border-top: 16px solid $color3;
+        -webkit-animation: spin 2s linear infinite; /* Safari */
+        animation: spin 2s linear infinite;
+        align-self: center;
+    }
+}

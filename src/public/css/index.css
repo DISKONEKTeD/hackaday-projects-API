@@ -84,6 +84,33 @@ table {
   #projects .owner_bar_footer {
     margin-top: 0.5em; }
 
+.jumbotron {
+  display: flex;
+  justify-content: center; }
+  .jumbotron #containLoader {
+    width: 100vw;
+    height: 100vw;
+    /* 100/56.25 = 1.778 */
+    max-height: 100vh;
+    max-width: 100vh;
+    /* 16/9 = 1.778 */
+    align-self: center; }
+  .jumbotron .loader {
+    margin: 0 auto;
+    width: 86vw;
+    height: 86vw;
+    /* 100/56.25 = 1.778 */
+    max-height: 86vh;
+    max-width: 86vh;
+    /* 16/9 = 1.778 */
+    border: 16px solid #f1faee;
+    border-radius: 50%;
+    border-top: 16px solid #a8dadc;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+    align-self: center; }
+
 #projectDetail {
   display: grid;
   grid-template-columns: 1fr;
@@ -112,7 +139,8 @@ table {
     margin: 0.5em 0; }
 
 #about img {
-  border-radius: 10px; }
+  border-radius: 10px;
+  width: 70%; }
 
 @media screen and (min-width: 768px) {
   #projects, #projectDetail {
@@ -156,17 +184,6 @@ h3 {
 
 .tippy-content {
   padding: 0.7em; }
-
-.loader {
-  border: 16px solid #f1faee;
-  border-radius: 50%;
-  border-top: 16px solid #a8dadc;
-  width: 400px;
-  height: 400px;
-  -webkit-animation: spin 2s linear infinite;
-  /* Safari */
-  animation: spin 2s linear infinite;
-  align-self: center; }
 
 .navbar-default .navbar-brand {
   color: black; }
