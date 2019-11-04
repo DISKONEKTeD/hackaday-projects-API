@@ -2,8 +2,10 @@
 @import 'base/reset';
 @import 'base/fonts';
 @import 'layout/projects';
+@import 'layout/projectDetail';
 @import 'layout/config';
 @import 'layout/responsive';
+
 
 body {
     font: 100% $font-stack;

@@ -12,14 +12,20 @@ const USER_REQ = API_URI + 'users/';
 const getProjectDetail = async (req, res, next) => {
     let { id } = req.params;
 
+
     const REQ = API_URI + 'projects/' + id + API_KEY;
     let response = await axios.get(REQ);
     let { data } = response;
 
-    // data.tags
+    // http://api.hackaday.io/v1/projects/search?search_term=voice&api_key=YOUR_API_KEY
+    var randTag = data.tags[Math.floor(Math.random() * data.tags.length)];
+    const REQ_REM = API_URI + 'projects/search' + API_KEY + '&search_term=' + randTag + '&per_page=3&page=1';
+    let responseTags = await axios.get(REQ_REM);
+    let recommended = responseTags.data.projects;
 
     return res.render('pages/projectDetail', {
-        data
+        data,
+        recommended,
     });
 }
 

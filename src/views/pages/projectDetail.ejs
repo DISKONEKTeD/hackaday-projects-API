@@ -11,16 +11,37 @@
 </header>
 
 <main>
-    <div class="jumbotron">
-        <img src="<%= data.image_url %>" width=150 />
-        <h1><%= data.name %></h1>
-        <h2><%= data.summary %></h2>
-        <span><%= data.comments %> comments</span>
-        <span><%= data.followers %> followers</span>
-        <span><%= data.views %> views</span>
+    <div class="jumbotron" id="projectDetail">
+        <div id="leftColumn">
+            <img src="<%= data.image_url %>" />
+            <div id="recommended">
+                <h2>Recommended</h2>
+                <div id="recommendedContainer">
+                    <% recommended.forEach((project) => { %>
+                        <div class="card project">
+                            <a href="/projects/<%= project.id %>">
+                                <% if (project.image_url === undefined || project.image_url === null ) { %>
+                                    <img class="card-img-top" src="/img/hack.jpg" alt="Card image cap">
+                                <% } else { %>
+                                    <img class="card-img-top" src="<%= project.image_url %>" alt="Card image cap">
+                                <% } %>
+                            </a>
+                        </div>
+                    <% }); %>    
+                </div>
+            </div>
+        </div>
+        <div id='rightColumn'>
+            <h1><%= data.name %></h1>
+            <h2><%= data.summary %></h2>
+            <div id='meta'>
+                <h3><%= data.comments %> comments</h3>
+                <h3><%= data.followers %> followers</h3>
+                <h3><%= data.views %> views</h3>
+            </div>
 
-        <p><%= data.description %></p>
-        <div><%= data.tags %></div>
+            <p><%- data.description %></p>
+        </div>
     </div>
 </main>
 

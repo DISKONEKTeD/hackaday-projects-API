@@ -81,8 +81,35 @@ table {
   #projects .owner_bar_footer {
     margin-top: 0.5em; }
 
+#projectDetail {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem; }
+  #projectDetail img {
+    width: 100%;
+    background-color: #a8dadc;
+    border-radius: 5px; }
+  #projectDetail #recommendedContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;
+    grid-gap: 5px; }
+    #projectDetail #recommendedContainer img.card-img-top {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: #a8dadc;
+      border-radius: 5px; }
+  #projectDetail h2 {
+    margin: 0.5em 0; }
+  #projectDetail #meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5em 0; }
+
 @media screen and (min-width: 768px) {
-  #projects {
+  #projects, #projectDetail {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (min-width: 1200px) {

@@ -1,4 +1,4 @@
-console.log('client side')
+// console.log('client side')
 const API_URI  = '/';
 const PER_PAGE = 6
 const PAGE = 1;
@@ -100,7 +100,6 @@ prev = async () => {
 
     page--;
 
-    // http://localhost:3000/projectsClient?page=1&per_page=8
     const REQ = API_URI + 'projectsClient?&per_page=' + per_page + '&page=' + page;
 
     // loading
@@ -153,12 +152,18 @@ prev = async () => {
         const h2 = document.createElement('h2');
         const proj_name = document.createTextNode(proj.name.toUpperCase());
         h2.appendChild(proj_name);
-        innDivTwo.appendChild(h2);
+        const a = document.createElement('a');
+        a.href = '/projects/' + proj.id;
+        a.appendChild(h2);
+        innDivTwo.appendChild(a);
 
+        const a2 = document.createElement('a');
+        a2.href = '/projects/' + proj.id;
         const image = new Image();
         image.src = proj.image_url;
         image.className = 'card-img-top';
-        div.appendChild(image);
+        a2.appendChild(image);
+        div.appendChild(a2);
         div.appendChild(innDivTwo)
 
         parent.appendChild(div);
@@ -246,12 +251,18 @@ next = async () => {
         const h2 = document.createElement('h2');
         const proj_name = document.createTextNode(proj.name.toUpperCase());
         h2.appendChild(proj_name);
-        innDivTwo.appendChild(h2);
+        const a = document.createElement('a');
+        a.href = '/projects/' + proj.id;
+        a.appendChild(h2);
+        innDivTwo.appendChild(a);
 
+        const a2 = document.createElement('a');
+        a2.href = '/projects/' + proj.id;
         const image = new Image();
         image.src = proj.image_url;
         image.className = 'card-img-top';
-        div.appendChild(image);
+        a2.appendChild(image);
+        div.appendChild(a2);
         div.appendChild(innDivTwo)
 
         parent.appendChild(div);
