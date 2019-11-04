@@ -3,6 +3,7 @@
 @import 'base/fonts';
 @import 'layout/projects';
 @import 'layout/projectDetail';
+@import 'layout/about';
 @import 'layout/config';
 @import 'layout/responsive';
 
@@ -11,6 +12,10 @@ body {
     font: 100% $font-stack;
     color: black;
     background-color: $color5;
+}
+
+footer {
+    margin-bottom: 15px;
 }
 
 h1 {

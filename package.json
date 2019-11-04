@@ -7,7 +7,7 @@
     "start": "npm run watch:code & npm run watch:css",
     "watch:code": "nodemon nodemon server.js",
     "watch:css": "node-sass -w src/scss -o src/public/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nightwatch"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "chromedriver": "^78.0.1",
     "nightwatch": "^1.2.4",
     "node-sass": "^4.13.0",
     "nodemon": "^1.19.4"
