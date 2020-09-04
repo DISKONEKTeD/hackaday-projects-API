@@ -28,7 +28,7 @@
   "devDependencies": {
     "chromedriver": "^78.0.1",
     "nightwatch": "^1.2.4",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.19.4"
   }
 }
